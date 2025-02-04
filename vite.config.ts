@@ -10,4 +10,14 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          qr: ['qrcode', 'html5-qrcode']
+        }
+      }
+    }
+  }
 });
